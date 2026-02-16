@@ -55,21 +55,30 @@ function triangle(val1, type1, val2, type2) {
     } else if (data["leg"] && data["adjacent angle"]) {
       a = data["leg"];
       beta = data["adjacent angle"];
-      if (beta >= 90) return "Кут має бути гострим.";
+      if (beta >= 90) {
+        console.log("Кут має бути гострим.");
+        return "failed";
+      }
       c = a / Math.cos(toRad(beta));
       b = Math.sqrt(c * c - a * a);
       alpha = 90 - beta;
     } else if (data["leg"] && data["opposite angle"]) {
       a = data["leg"];
       alpha = data["opposite angle"];
-      if (alpha >= 90) return "Кут має бути гострим.";
+      if (alpha >= 90) {
+        console.log("Кут має бути гострим.");
+        return "failed";
+      }
       c = a / Math.sin(toRad(alpha));
       b = Math.sqrt(c * c - a * a);
       beta = 90 - alpha;
     } else if (data["hypotenuse"] && data["angle"]) {
       c = data["hypotenuse"];
       alpha = data["angle"];
-      if (alpha >= 90) return "Кут має бути гострим.";
+      if (alpha >= 90) {
+        console.log("Кут має бути гострим.");
+        return "failed";
+      }
       a = c * Math.sin(toRad(alpha));
       b = c * Math.cos(toRad(alpha));
       beta = 90 - alpha;
@@ -78,12 +87,24 @@ function triangle(val1, type1, val2, type2) {
       return "failed";
     }
 
+    if (
+      !isFinite(a) ||
+      !isFinite(b) ||
+      !isFinite(c) ||
+      a <= 0 ||
+      b <= 0 ||
+      c <= 0
+    ) {
+      console.log("Помилка при обчисленні граничних значень.");
+      return "failed";
+    }
+
     console.log(`Результати:
-a = ${a.toFixed(2)}
-b = ${b.toFixed(2)}
-c = ${c.toFixed(2)}
-alpha = ${alpha.toFixed(2)}°
-beta = ${beta.toFixed(2)}°`);
+a = ${Number(a.toPrecision(8))}
+b = ${Number(b.toPrecision(8))}
+c = ${Number(c.toPrecision(8))}
+alpha = ${Number(alpha.toPrecision(5))}°
+beta = ${Number(beta.toPrecision(5))}°`);
 
     return "success";
   } catch (e) {
