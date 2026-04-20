@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 5</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        margin-top: 20px;
+      }
+      #gameArea {
+        width: 600px;
+        height: 500px;
+        border: 2px solid #333;
+        margin: 20px auto;
+        position: relative;
+        display: none;
+        background-color: #f9f9f9;
+      }
+      #shape {
+        border-radius: 50%;
+        position: absolute;
+        cursor: pointer;
+      }
+      .settings {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Game: Clicker</h1>
+
+    <div id="setupScreen" class="settings">
+      <label for="difficulty">Choose difficulty:</label>
+      <select id="difficulty">
+        <option value="3000">Easy (3s, big shape)</option>
+        <option value="2000">Medium (2s, medium shape)</option>
+        <option value="1000">Hard (1s, small shape)</option>
+      </select>
+      <br /><br />
+
+      <label for="shapeColor">Choose color shape:</label>
+      <input type="color" id="shapeColor" value="#ff0000" />
+      <br /><br />
+
+      <button id="startBtn">Start</button>
+    </div>
+
+    <div id="gameScreen" style="display: none">
+      <h2 id="scoreDisplay">Score: 0</h2>
+      <div id="gameArea">
+        <div id="shape"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
