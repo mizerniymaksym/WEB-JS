@@ -27,6 +27,11 @@
       .settings {
         margin-bottom: 20px;
       }
+      .stats {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+      }
     </style>
   </head>
   <body>
@@ -49,7 +54,10 @@
     </div>
 
     <div id="gameScreen" style="display: none">
-      <h2 id="scoreDisplay">Score: 0</h2>
+      <div class="stats">
+        <h2 id="scoreDisplay">Score: 0</h2>
+        <h2 id="timerDisplay">Time: 0.0s</h2>
+      </div>
       <div id="gameArea">
         <div id="shape"></div>
       </div>
