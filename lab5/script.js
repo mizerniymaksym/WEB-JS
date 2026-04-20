@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const gameArea = document.getElementById("gameArea");
   const shape = document.getElementById("shape");
   const scoreDisplay = document.getElementById("scoreDisplay");
+  const timerDisplay = document.getElementById("timerDisplay");
 
   const difficultySelect = document.getElementById("difficulty");
   const colorInput = document.getElementById("shapeColor");
@@ -12,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let score = 0;
   let timeLimit = 1000;
   let shapeSize = 50;
-  let timeoutId;
+  let timerInterval;
 
   startBtn.addEventListener("click", function () {
     timeLimit = parseInt(difficultySelect.value);
@@ -41,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   shape.addEventListener("click", function () {
-    clearTimeout(timeoutId);
+    clearInterval(timerInterval);
 
     score++;
     scoreDisplay.textContent = `Score: ${score}`;
@@ -59,9 +60,18 @@ document.addEventListener("DOMContentLoaded", function () {
     shape.style.left = randomX + "px";
     shape.style.top = randomY + "px";
 
-    timeoutId = setTimeout(function () {
-      endGame();
-    }, timeLimit);
+    let timeLeft = timeLimit;
+    timerDisplay.textContent = `Time: ${(timeLeft / 1000).toFixed(1)}s`;
+
+    timerInterval = setInterval(function () {
+      timeLeft -= 100;
+      timerDisplay.textContent = `Time: ${(timeLeft / 1000).toFixed(1)}s`;
+
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        endGame();
+      }
+    }, 100);
   }
 
   function endGame() {
@@ -71,3 +81,4 @@ document.addEventListener("DOMContentLoaded", function () {
     setupScreen.style.display = "block";
   }
 });
+
