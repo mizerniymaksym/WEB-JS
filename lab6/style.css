@@ -1,0 +1,30 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #6ab0f6;
+  color: white;
+}
+.controls,
+.stats {
+  margin: 15px 0;
+}
+#gameBoard {
+  display: grid;
+  grid-template-columns: repeat(5, 60px);
+  grid-template-rows: repeat(5, 60px);
+  gap: 5px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.cell {
+  width: 60px;
+  height: 60px;
+  background-color: #34495e;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.cell.on {
+  background-color: #1ef14f;
+  box-shadow: 0 0 15px #02a342;
+}
