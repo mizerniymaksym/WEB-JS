@@ -1,0 +1,33 @@
+{
+  "categoryName": "Силові тренажери",
+  "items": [
+    {
+      "id": 201,
+      "name": "Штанга олімпійська",
+      "shortname": "barbell",
+      "description": "Штанга 20 кг.",
+      "price": "5000 UAH"
+    },
+    {
+      "id": 202,
+      "name": "Гантелі набірні",
+      "shortname": "dumbbells",
+      "description": "Пара по 15 кг.",
+      "price": "2500 UAH"
+    },
+    {
+      "id": 203,
+      "name": "Лава для жиму",
+      "shortname": "bench",
+      "description": "Регульована лава.",
+      "price": "4000 UAH"
+    },
+    {
+      "id": 204,
+      "name": "Гиря 16 кг",
+      "shortname": "kettlebell",
+      "description": "Чавунна гиря.",
+      "price": "1200 UAH"
+    }
+  ]
+}

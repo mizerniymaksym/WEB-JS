@@ -1,0 +1,33 @@
+{
+  "categoryName": "Кардіо тренажери",
+  "items": [
+    {
+      "id": 101,
+      "name": "Бігова доріжка",
+      "shortname": "treadmill",
+      "description": "Професійна доріжка.",
+      "price": "25000 UAH"
+    },
+    {
+      "id": 102,
+      "name": "Орбітрек",
+      "shortname": "elliptical",
+      "description": "Еліптичний тренажер.",
+      "price": "18000 UAH"
+    },
+    {
+      "id": 103,
+      "name": "Велотренажер",
+      "shortname": "exercise-bike",
+      "description": "Магнітний велотренажер.",
+      "price": "12000 UAH"
+    },
+    {
+      "id": 104,
+      "name": "Степпер",
+      "shortname": "stepper",
+      "description": "Компактний міні-степпер.",
+      "price": "3500 UAH"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "categoryName": "Товари для Йоги",
+  "items": [
+    {
+      "id": 301,
+      "name": "Килимок для йоги",
+      "shortname": "mat",
+      "description": "Еко-матеріал, 6мм.",
+      "price": "800 UAH"
+    },
+    {
+      "id": 302,
+      "name": "Блок для йоги",
+      "shortname": "block",
+      "description": "Піна EVA.",
+      "price": "300 UAH"
+    },
+    {
+      "id": 303,
+      "name": "Ремінь для розтяжки",
+      "shortname": "strap",
+      "description": "Бавовняний ремінь.",
+      "price": "200 UAH"
+    },
+    {
+      "id": 304,
+      "name": "Болстер",
+      "shortname": "bolster",
+      "description": "Подушка для медитації.",
+      "price": "1500 UAH"
+    }
+  ]
+}
